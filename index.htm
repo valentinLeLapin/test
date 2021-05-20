@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>roshambo</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    const roshambo = ['pierre', 'feuille', 'ciseaux'];
+    const urlVars = new URLSearchParams(location.search).get('choice');
+    let utiChoix = 0 ;
+    if (urlVars == "pierre") 
+    {
+    	utiChoix = 0;
+    }
+    else if (urlVars == "feuille") 
+    {
+        utiChoix = 1;
+    }	
+    else if (urlVars == "ciseaux") 
+    {
+    	utiChoix = 2;
+    }
+    else
+    {
+    	alert("il faut choisir entre pierre, feuille ou ciseaux, veuillez retaper votre choix");
+    }	
+
+
+    
+    
+
+    	
+    //const   newUrl = new URL('urlVars');
+    alert(urlVars);
+    const aleat =  parseInt(Math.random() * 3)
+    const ordiChoix = roshambo[aleat];
+    //alert(aleat);
+
+    //if (utiChoix === 0 && aleat == 0 || utiChoix == 1 && aleat == 1 || utiChoix == 2 && aleat == 2) 
+    if (utiChoix === aleat)
+    {
+       alert(`vous êtes à égalité (joueur) -> ${urlVars} --- ${ordiChoix}  <- (ordinateur)`);
+    }
+    else
+    {
+    	if (utiChoix == 0 && aleat == 1) 
+    	{
+    		alert(`Vous avez perdu  résultat : (joueur) -> ${urlVars} --- ${ordiChoix}  <- (ordinateur)r `)
+    	}
+    	if (utiChoix == 1 && aleat == 0) 
+    	{
+    		alert(`Vous avez perdu résultat : (joueur) -> ${urlVars} --- ${ordiChoix}  <- (ordinateur) `)
+    	}
+    	if (utiChoix == 0 && aleat == 2) 
+    	{
+    		alert(`Vous avez gagné résultat : (joueur) -> ${urlVars} --- ${ordiChoix}  <- (ordinateur) `)
+    	}
+    	if (utiChoix == 2 && aleat == 0) 
+    	{
+    		alert(`Vous avez perdu résultat : (joueur) -> ${urlVars} --- ${ordiChoix}  <- (ordinateur) `)
+    	}
+    	if (utiChoix == 1 && aleat == 2) 
+    	{
+    		alert(`Vous avez perdu résultat : (joueur) -> ${urlVars} --- ${ordiChoix}  <- (ordinateur) `)
+    	}
+    	if (utiChoix == 2 && aleat == 1) 
+    	{
+    		alert(`Vous avez perdu résultat : (joueur) -> ${urlVars} --- ${ordiChoix}  <- (ordinateur) `)
+    	}
+
+    }
+
+    
+
+
+   // alert(urlVars.search);
+
+    //alert(ordiChoix)
+
+    // récupérer le choix de l'utilisateur depuis la barre URL
+    // s'assurer que son choix existe bien dans le tableau roshambo
+    // récupérer un nombre aléatoire
+    // il faudra multiplier l'aléatoire (car en JavaScript la fonction le générant va de 0 à 1)
+    // arrondir l'aléatoire car le moteur JS génère un flottant
+    // enfin cibler une clé du tableau
+    // faire vos comparaisons et indiquer un message final
+    </script>
+  </body>
+</html>
